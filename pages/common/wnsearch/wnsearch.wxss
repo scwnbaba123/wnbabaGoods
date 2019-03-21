@@ -1,0 +1,41 @@
+/* pages/common/wnsearch/wnsearch.wxss */
+.pos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background:#f2f7f5;
+}
+
+.pos .search_content {
+  height: 72rpx;
+  line-height: 72rpx;
+  background-color: rgba(22, 27, 25, 0.05);
+  border: 1px solid #efefee;
+  text-align: center;
+}
+.pos .icon-sousuo{
+  display: inline-block;
+  font-size: 22rpx;
+  margin-right: 14rpx;
+  line-height: 72rpx;
+  color: #baacb3;
+}
+.pos .search_content .icon-search, .pos .search_content .search_input {
+  color: #baacb3;
+  display: inline-block;
+  font-size: 22rpx;
+
+}
+
+.pos .message {
+  display: block;
+  text-align: center;
+  margin-left: 20rpx;
+}
+
+.pos .doc {
+  font-size: 16rpx;
+  display: block;
+}

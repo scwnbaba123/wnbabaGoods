@@ -1,0 +1,9 @@
+<!--pages/common/wnsearch/wnsearch.wxml-->
+  <view class="pos">
+    <view class="search_read_only">
+      <navigator class="search_content" open-type="navigate" url="/pages/search/search">
+        <i class="iconfont icon-sousuo">{{sousuo}}</i>
+        <view class="search_input">搜索商品</view>
+      </navigator>
+    </view>
+  </view>

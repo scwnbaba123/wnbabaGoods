@@ -1,0 +1,66 @@
+<view class="container">
+  <!-- header   -->
+  <view class="header">
+    <image class="header-logo" src="{{ imgUrls }}"></image>
+    <navigator class="car" url="/pages/car/car">
+      <image class="header-car" src="{{ imgCar }}"></image>
+    </navigator>
+  </view>
+  <!-- 搜索框 -->
+  <view class="pos">
+    <view class="search_read_only">
+      <navigator
+        class="search_content"
+        open-type="navigate"
+        url="/pages/search/search"
+      >
+        <i class="iconfont icon-sousuo">{{ sousuo }}</i>
+        <view class="search_input">搜索商品sq</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 商品切换 -->
+  <scroll-view class="" scroll-x="false" scroll-y="true" bindscroll="scroll">
+    <view class="wn-tab">
+      <view class="wn-goods-list">
+        <view class="wn-goods-img">
+          <image class="wn-goods-img" src="{{ imgUrls }}"></image>
+        </view>
+        <view class="wn-goods-info">
+          <text class="goods-message"
+            >丹麦进口超级好用无敌霹雳爆炸 独家水杯 精美礼盒包装 送父母.ww.</text
+          >
+          <text class="goods-price">¥ 99</text>
+        </view>
+      </view>
+
+      <view class="wn-goods-list">
+        <view class="wn-goods-img">
+          <image class="wn-goods-img" src="{{ imgUrls }}"></image>
+        </view>
+        <view class="wn-goods-info">
+          <text class="goods-message"
+            >丹麦进口超级好用无敌霹雳爆炸 独家水杯 精美礼盒包装 送父母.ww.</text
+          >
+          <text class="goods-price">¥ 99</text>
+        </view>
+      </view>
+      <view
+        class="wn-goods-list"
+        wx:for="{{ goodsList }}"
+        wx:key="{{ goodsList[index].goods_id }}"
+      >
+        <view class="wn-goods-img">
+          <image
+            class="wn-goods-img"
+            src="{{ goodsList[index].more.thumbnail }}"
+          ></image>
+        </view>
+        <view class="wn-goods-info">
+          <text class="goods-message">{{ goodsList[index].goods_name }}</text>
+          <text class="goods-price">{{ goodsList[index].sale_price }}积分</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

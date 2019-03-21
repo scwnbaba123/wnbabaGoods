@@ -1,0 +1,162 @@
+@import "../../components/shop_grid_list.wxss";
+@import "../../components/bomb_screen.wxss";
+@import "../../components/common/placeholder.wxss";
+@import "../../components/common/bottomLoadMore.wxss";
+@import "../../components/discover.wxss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60rpx;
+  background: #ffffff;
+}
+
+.header-logo {
+  /* flex-grow: 1; */
+  width: 173rpx;
+  height: 43rpx;
+  position: absolute;
+  left: 28rpx;
+  top: 0;
+}
+
+.header-car {
+  width: 45rpx;
+  height: 43rpx;
+  position: absolute;
+  right: 28rpx;
+  top: 0;
+}
+
+.pos {
+  position: fixed;
+  top: 60rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #f2f7f5;
+}
+
+.pos .search_content {
+  height: 72rpx;
+  line-height: 72rpx;
+  background-color: rgba(22, 27, 25, 0.05);
+  border: 1px solid #efefee;
+  text-align: center;
+}
+
+.pos .icon-sousuo {
+  display: inline-block;
+  font-size: 22rpx;
+  margin-right: 14rpx;
+  line-height: 72rpx;
+  color: #baacb3;
+}
+
+.pos .search_content .icon-search,
+.pos .search_content .search_input {
+  color: #baacb3;
+  display: inline-block;
+  font-size: 22rpx;
+
+}
+
+.pos .message {
+  display: block;
+  text-align: center;
+  margin-left: 20rpx;
+}
+
+.pos .doc {
+  font-size: 16rpx;
+  display: block;
+}
+
+.page__bd {
+  width: 100%;
+  height: 100%;
+  padding-top: 140rpx;
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.wn-tab {
+  width: 100%;
+  padding: 150rpx 28rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.wn-goods-list {
+  flex: 0 0 48%;
+  border-radius: 10rpx;
+  border: solid 2rpx #e8e8e8;
+  box-sizing: border-box;
+  margin-bottom: 32rpx;
+}
+
+.wn-goods-img {
+  width: 100%;
+  height: 330rpx;
+}
+
+.wn-goods-info{
+  width: 100%;
+  height: 140rpx;
+  position: relative;
+}
+
+.goods-message {
+  font-size: 24rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  line-height: 38rpx;
+  color: #222222;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  padding: 16rpx 10rpx 4px 10px;
+}
+
+.goods-price {
+  position: absolute;
+  right:20rpx;
+  bottom: 10rpx;
+  display: block;
+  font-size: 26rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 30rpx;
+  letter-spacing: 0px;
+  color: #00824a;
+  text-align: right;
+  padding-right: 10rpx;
+  padding-top: 6px;
+}
+.a{
+  opacity: 0;
+  transition: opacity 1s linear 2s;
+}
+.Active{
+    opacity: 1;
+}

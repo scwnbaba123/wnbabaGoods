@@ -1,0 +1,48 @@
+<view class="container" hover-class="none" hover-stop-propagation="false">
+  <!-- <view class="pos">
+    <view class="search_read_only">
+      <navigator class="search_content" open-type="navigate" url="/pages/search/search">
+        <i class="iconfont icon-sousuo">{{sousuo}}</i>
+        <view class="search_input">搜索商品sq</view>
+      </navigator>
+    </view>
+  </view> -->
+  <wnsearch></wnsearch>
+  <view class="goods-content">
+    <view class="goods-classify">
+      <scroll-view scroll-y="true" class="scroll-nav" bindscrolltoupper="upper" bindscrolltolower="lower"
+        bindscroll="scroll">
+        <view wx:for="{{tabs}}" wx:key="*this" class="wn-bind">
+          <view data-id="{{item.id}}" data-index="{{index}}"
+            class="weui-navbar__item {{activeIndex == item.id ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title {{activeIndex == item.id ? 'weui-bar__left' : ''}}">{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="goods-info">
+      <view class="weui-tab__content" hidden="{{activeIndex != item.id}}" wx:for="{{tabs}}" wx:key="*this">
+
+        <view class="wn-goods-list" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+          <view class="wn-goods-img">
+            <image class="wn-goods-img" src="{{item.more.thumbnail}}"></image>
+          </view>
+          <view class="wn-goods-info">
+            <text class="goods-message">{{item.goods_name}}</text>
+            <text class="goods-price">¥ {{item.sale_price}}</text>
+          </view>
+        </view>
+        <view class="wn-goods-list">
+          <view class="wn-goods-img">
+            <image class="wn-goods-img" src="{{imgUrls}}"></image>
+          </view>
+          <view class="wn-goods-info">
+            <text class="goods-message">丹麦进口超级好用无敌霹雳爆炸 独家水杯 精美礼盒包装 送父母.ww.</text>
+            {{index}}
+            <text class="goods-price">¥ 99</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

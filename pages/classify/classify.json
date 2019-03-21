@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "蜗牛巴巴",
+  "usingComponents": {"wnsearch": "../common/wnsearch/wnsearch"}
+}
