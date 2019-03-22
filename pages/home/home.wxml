@@ -22,34 +22,18 @@
   <!-- 商品切换 -->
   <scroll-view class="" scroll-x="false" scroll-y="true" bindscroll="scroll">
     <view class="wn-tab">
-      <view class="wn-goods-list">
-        <view class="wn-goods-img">
-          <image class="wn-goods-img" src="{{ imgUrls }}"></image>
-        </view>
-        <view class="wn-goods-info">
-          <text class="goods-message"
-            >丹麦进口超级好用无敌霹雳爆炸 独家水杯 精美礼盒包装 送父母.ww.</text
-          >
-          <text class="goods-price">¥ 99</text>
-        </view>
-      </view>
 
-      <view class="wn-goods-list">
-        <view class="wn-goods-img">
-          <image class="wn-goods-img" src="{{ imgUrls }}"></image>
-        </view>
-        <view class="wn-goods-info">
-          <text class="goods-message"
-            >丹麦进口超级好用无敌霹雳爆炸 独家水杯 精美礼盒包装 送父母.ww.</text
-          >
-          <text class="goods-price">¥ 99</text>
-        </view>
-      </view>
       <view
         class="wn-goods-list"
         wx:for="{{ goodsList }}"
         wx:key="{{ goodsList[index].goods_id }}"
+        id="{{ goodsList[index].goods_id }}"
+        bindtap="details"
       >
+      <!-- <navigator url="../goodsdetails/goodsdetails.wxml?goodsid={{ goodsList[index].goods_id }}"  open-type="navigate"> -->
+        
+      
+        
         <view class="wn-goods-img">
           <image
             class="wn-goods-img"
@@ -60,7 +44,11 @@
           <text class="goods-message">{{ goodsList[index].goods_name }}</text>
           <text class="goods-price">{{ goodsList[index].sale_price }}积分</text>
         </view>
+      <!-- </navigator> -->
       </view>
+      <view hidden="{{loadmore}}" class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多了</view>
+    </view>
     </view>
   </scroll-view>
 </view>

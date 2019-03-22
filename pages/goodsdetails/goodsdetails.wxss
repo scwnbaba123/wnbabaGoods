@@ -1,0 +1,291 @@
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 直接设置swiper属性 */
+swiper {
+  height: 480rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods-scorll {
+  background: red;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  margin-bottom: 0rpx;
+  background: #eeeeee;
+}
+
+.detail .title {
+  font-size: 30rpx;
+  margin: 0 0 20rpx;
+  padding: 0 20rpx;
+  color: black;
+  text-align: justify;
+  background: #fff;
+}
+
+.detail .price {
+  color: red;
+  font-size: 28rpx;
+  margin: 0 0 20rpx;
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+.detail .franking {
+  margin: 0 0 20rpx;
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+.size {
+  font-size: .24rem;
+  margin: 0 20rpx;
+}
+
+.line_flag {
+  width: 80rpx;
+  height: 1rpx;
+  display: inline-block;
+  margin: 20rpx auto;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  height: 2rpx;
+  display: inline-block;
+  margin: 20rpx 0rpx;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #bbbaba;
+}
+
+.button-green {
+  background-color: #006439;
+  /* Green */
+}
+
+.button-red {
+  background-color: #f44336;
+  /* 红色 */
+}
+
+.image_detail {
+  width: 100%;
+}
+
+button {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 50%;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.detail-nav image {
+  width: 70rpx;
+  height: 50rpx;
+  margin: 20rpx 40rpx;
+}
+
+.line_nav {
+  width: 5rpx;
+  height: 100%;
+  background-color: gainsboro;
+}
+
+/* 占位 */
+.temp {
+  height: 100rpx;
+}
+
+text {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 10rpx;
+}
+
+/*使屏幕变暗 */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+.commodity_attr_box {
+  height: 500rpx;
+  width: 100%;
+  /* overflow: hidden; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.cancel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  border-radius: 20rpx;
+  -webkit-border-radius: 20rpx;
+  -moz-border-radius: 20rpx;
+  -ms-border-radius: 20rpx;
+  -o-border-radius: 20rpx;
+}
+
+.show-goods-image {
+  position: absolute;
+  top: -40rpx;
+  left: 30rpx;
+  width: 150rpx;
+  height: 150rpx;
+  padding: 10rpx;
+  background: #fff;
+  border-radius: 10rpx 10rpx 0 0;
+  -webkit-border-radius: 10rpx 10rpx 0 0;
+  -moz-border-radius: 10rpx 10rpx 0 0;
+  -ms-border-radius: 10rpx 10rpx 0 0;
+  -o-border-radius: 10rpx 10rpx 0 0;
+  overflow: hidden;
+}
+
+.show-goods-image image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.goodsinfo {
+  margin-left: 200rpx;
+}
+
+.goodsinfo-price {
+  font-size: 24rpx;
+  color: red;
+  margin: 10rpx 0 0;
+  line-height: 30rpx;
+}
+
+.goodsinfo-number {
+  font-size: 24rpx;
+  margin: 0;
+  line-height: 24rpx;
+}
+
+.chose-goods-num {
+  position: relative;
+}
+
+.num-text {
+  margin: 10rpx 20rpx 0;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.stepper {
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  width: 190rpx;
+  height: 56rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 3rpx;
+  -webkit-border-radius: 3rpx;
+  -moz-border-radius: 3rpx;
+  -ms-border-radius: 3rpx;
+  -o-border-radius: 3rpx;
+}
+
+.stepper text {
+  width: 40rpx;
+  line-height: 26rpx;
+  text-align: center;
+  float: left;
+}
+
+.stepper input {
+  width: 60rpx;
+  height: 56rpx;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 28rpx;
+  border-left: 1rpx solid #ccc;
+  border-right: 1rpx solid #ccc;
+}
+
+/*普通样式*/
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+.stepper .disabled {
+  color: #ccc;
+}
+
+.goods-info-allprice {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+}
+
+.goods-pay-money {
+  display: inline-block;
+  font-size: 50rpx;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.button-ok {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  color: white;
+  line-height: 90rpx;
+  background: #f44336;
+}

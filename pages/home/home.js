@@ -5,7 +5,8 @@ Page({
     imgCar: ['../../images/car.png'],
     pagenation: 1,
     goodsList: [],
-    flag: false
+    flag: false,
+    loadmore: true
   },
   onLoad(){
     var that = this;
@@ -28,7 +29,7 @@ Page({
       success(res){
         console.log(res)
         if(res.data.code==1) {
-          var allArr=[];   
+          var allArr = [];   
           var initArr = that.data.goodsList ? that.data.goodsList : [];  //获取已加载的商品
           var newArr = res.data.data;				//获取新加载的商品
           var lastPageLength = newArr.length;  			//新获取的商品数量
@@ -40,6 +41,7 @@ Page({
           if (lastPageLength < 12) {           //如果新加载的一页课程数量小于12，则没有下一页
             that.setData({
               flag: true,
+              loadmore: false
             });
           }
           that.setData({
@@ -50,6 +52,12 @@ Page({
       complete: function () {
         wx.hideLoading();
       }
+    })
+  },
+  details(e) {
+    var goodsid = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../goodsdetails/goodsdetails?goodsid='+goodsid
     })
   },
     /**

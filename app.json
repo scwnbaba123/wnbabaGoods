@@ -10,7 +10,7 @@
     "pages/search/search",
     "pages/car/car",
     "pages/common/wnsearch/wnsearch",
-    "pages/list/list"
+    "pages/goodsdetails/goodsdetails"
   ],
   "window": {
     "backgroundTextStyle": "light",
