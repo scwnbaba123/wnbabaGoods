@@ -4,196 +4,109 @@ Page({
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  onLoad: function() {
+  onLoad: function () {
     var that = this;
     // 查看是否授权
-    wx.getSetting({
-      success: function(res) {
+    // wx.getSetting({
+    //   success: function(res) {
+    //     console.log(res)
+    //     if (res.authSetting['scope.userInfo']) {
+    //       wx.getUserInfo({
+    //         success: function(res) {
+    //           console.log(1)
+    //           console.log(res)
+    //           // 从数据库获取用户信息
+    //           // that.queryUsreInfo();
+    //           // 用户已经授权过
+    //           // wx.switchTab({
+    //           //   url: '/pages/myinfo/myinfo'
+    //           // })
+    //         }
+    //       });
+    //     }else {
+    //       console.log('no');
+    //       wx.getUserInfo({
+    //         success: function(res) {
+    //           console.log(1)
+    //           console.log(res)
+    //           // 从数据库获取用户信息
+    //           // that.queryUsreInfo();
+    //           // 用户已经授权过
+    //           // wx.switchTab({
+    //           //   url: '/pages/myinfo/myinfo'
+    //           // })
+    //         }
+    //       });
+    //     }
+    //   }
+    // })
+
+    // this.getPhoneNumber();
+  },
+  wxlogin(ency,iv) {
+    // 登录
+    wx.login({
+      success: res => {
         console.log(res)
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function(res) {
-              // console.log(1)
-              // console.log(res)
-              //从数据库获取用户信息
-              // that.queryUsreInfo();
-              //用户已经授权过
-              // wx.switchTab({
-              //   url: '/pages/home/home'
-              // })
-            }
-          });
-        }
-      }
-    })
-  },
-  bindGetUserInfo: function(res) {
-    console.log(res);
-    if (res.detail.userInfo) {
-      console.log("点击了同意授权");
-    } else {
-      console.log("点击了拒绝授权");
-    }
-
-
-    // if (e.detail.userInfo) {
-    //   //用户按了允许授权按钮
-    //   var that = this;
-    //   //插入登录的用户的相关信息到数据库
-    //   wx.request({
-    //     url: app.globalData.urlPath + 'user/add',
-    //     data: {
-    //       openid: getApp().globalData.openid,
-    //       nickName: e.detail.userInfo.nickName,
-    //       avatarUrl: e.detail.userInfo.avatarUrl,
-    //       province: e.detail.userInfo.province,
-    //       city: e.detail.userInfo.city
-    //     },
-    //     header: {
-    //       'content-type': 'application/json'
-    //     },
-    //     success: function (res) {
-    //       //从数据库获取用户信息
-    //       that.queryUsreInfo();
-    //       console.log("插入小程序登录用户信息成功！");
-    //     }
-    //   });
-    //   //授权成功后，跳转进入小程序首页
-    //   wx.switchTab({
-    //     url: '/pages/index/index'
-    //   })
-    // } else {
-    //   //用户按了拒绝按钮
-    //   wx.showModal({
-    //     title: '警告',
-    //     content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
-    //     showCancel: false,
-    //     confirmText: '返回授权',
-    //     success: function (res) {
-    //       if (res.confirm) {
-    //         console.log('用户点击了“返回授权”')
-    //       }
-    //     }
-    //   })
-    // }
-  },
-  //获取用户信息接口
-  queryUsreInfo: function() {
-    wx.request({
-      url: app.globalData.apiBase + 'user/userInfo',
-      data: {
-        openid: app.globalData.openid
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function(res) {
-        console.log(res.data);
-        getApp().globalData.userInfo = res.data;
-      }
-    })
-  },
-  getPhoneNumber: function(e) { //点击获取手机号码按钮
-
-console.log(e)
-
-    var that = this;
-
-
-
-    wx.checkSession({
-
-      success: function() {
-
-        console.log(e.detail.errMsg)
-
-        console.log(e.detail.iv)
-
-        console.log(e.detail.encryptedData)
-
-
-
-        var ency = e.detail.encryptedData;
-
-        var iv = e.detail.iv;
-
-        var sessionk = that.data.sessionKey;
-
-
-
-        if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
-          console.log("shgiabi")
-          that.setData({
-
-            modalstatus: true
-
-          });
-          wx.switchTab({
-                url: '/pages/home/home'
+        console.log(res.code);
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: app.globalData.apiBase1 + '/intfa/v1.Wxlogin/wx_login',
+          data: {
+            code: res.code,
+            encryptedData: ency,
+            iv: iv,
+          },
+          method: 'post', 
+          success: function (res) {
+            // success
+            console.log(res);
+            if(res.data.code==1) {
+              wx.setStorage({
+                key: 'token_session',
+                data: res.data.data.token
               })
-
-        } else { //同意授权
-
-          wx.request({
-
-            method: "GET",
-
-            url: 'https://xxx/wx/deciphering.do',
-
-            data: {
-
-              encrypdata: ency,
-
-              ivdata: iv,
-
-              sessionkey: sessionk
-
-            },
-
-            header: {
-
-              'content-type': 'application/json' // 默认值
-
-            },
-
-            success: (res) => {
-
-              console.log("解密成功~~~~~~~将解密的号码保存到本地~~~~~~~~");
-
-              console.log(res);
-
-              var phone = res.data.phoneNumber;
-
-              console.log(phone);
-
-
-
-            },
-            fail: function(res) {
-
-              console.log("解密失败~~~~~~~~~~~~~");
-
-              console.log(res);
-
+              wx.navigateBack()
             }
-
-          });
-
-        }
-
-      },
-
-      fail: function() {
-
-        console.log("session_key 已经失效，需要重新执行登录流程");
-
-        that.wxlogin(); //重新登录
-
+          },
+          fail: function () {
+            // fail
+            wx.showToast({
+              title: '服务器报错，请联系管理员',
+              icon: 'success',
+              duration: 2000
+            })
+          }
+        })
       }
-
+    })
+  },
+  getPhoneNumber: function (e) { //点击获取手机号码按钮
+    console.log(e)
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
+    var that = this;
+    wx.checkSession({
+      success: function (res) {
+        var ency = e.detail.encryptedData;
+        var iv = e.detail.iv;
+        var sessionk = that.data.sessionKey;
+        if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
+          console.log("拒绝授权")
+          wx.navigateBack({
+            delta: 1
+          })
+        } else { //同意授权
+          console.log(res);
+          console.log('同意授权');
+          that.wxlogin(e.detail.encryptedData,e.detail.iv); //重新登录
+        }
+      },
+      fail: function () {
+        console.log("session_key 已经失效，需要重新执行登录流程");
+        that.wxlogin(e.detail.encryptedData,e.detail.iv); //重新登录
+      }
     });
-
-
-
   }
 })

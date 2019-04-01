@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="header">
+      <view class="userinfo">
+          <!-- <button 
+          wx:if="{{!hasUserInfo && canIUse}}" 
+          open-type="getUserInfo" 
+          bindgetuserinfo="getUserInfo"
+          > 
+          获取头像昵称 
+        </button> -->
+          <block>
+            <!-- <image 
+            class="userinfo-avatar" 
+            src="{{userInfo.avatarUrl}}" 
+            mode="cover"
+            >
+          </image> -->
+          <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+        </block>
+          <view class="user-message">
+              <open-data class="userinfo-nickname" type="userNickName"></open-data>
+            <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+            <text class="userinfo-nickname">{{memberLevel}}</text>
+            <text class="userinfo-nickname" wx:if="{{carbonaccount}}">碳账户：{{carbonaccount}}</text>
+            <text class="userinfo-nickname">碳账户</text>
+          </view>
+        </view>
+  </view>
+  
+  <view class="persenal">
+      <text>我的积分</text>
+      <text>积分余额：{{userscore}}</text>
+    </view>
+  <view class="all-order" bindtap="togoodsorder">
+    <text>全部订单</text>
+    <text>查看全部订单 ></text>
+  </view>
+  <view class="check-order">
+    <view class="lidear">
+      <view class="img">
+          <image class="" src="../../images/daifukuan.png"/>
+      </view>
+      <text>待付款</text>
+    </view>
+    <view class="lidear">
+      <view class="img">
+          <image class="" src="../../images/daifahuo.png"/>
+      </view>
+      <text>代发货</text>
+    </view>
+    <view class="lidear">
+        <view class="img">
+            <image class="" src="../../images/yishouhuo.png"/>
+        </view>
+      <text>待收货</text>
+    </view>
+    <view class="lidear">
+        <view class="img">
+            <image class="" src="../../images/yiwancheng.png"/>
+        </view>
+      <text>已完成</text>
+    </view>
+  </view>
+  <view class="persenal" bindtap="topersonal">
+    <text>个人信息</text>
+    <i class="iconfont icon-icon1">{{icon1}}</i>
+  </view>
+  <button class="bottom" type="primary" bindtap="layout">退出登录</button>
+</view>
+  

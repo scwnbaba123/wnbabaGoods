@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="user-info">
+    <text>收货人姓名：</text>
+    <text>{{userName}}</text>
+    <!-- <input type="text" placeholder="请输入收货人姓名" value="{{userName}}"/> -->
+  </view>
+  <view class="user-info">
+    <text>联系电话：</text>
+    <text>{{user_phone}}</text>
+    <!-- <input maxlength="11" type="text" placeholder="请输入联系电话" value="{{user_phone}}"/> -->
+  </view>
+  <view class="user-info">
+    <text>所在地区：</text>
+    <text data-id="">{{province_name}}</text>
+    <text>{{city_name}}</text>
+    <text>{{district_name}}</text>
+  </view>
+  <view class="user-info">
+    <text>收货地址：</text>
+    <text>{{address}}</text>
+    <!-- <input type="text" placeholder="请输入具体收货地址" value="{{address}}"/> -->
+  </view>
+  <view class="getaddress">
+    <button class="weui-btn" type="warn" bindtap="changeAddress">修改地址</button>
+  </view>
+</view>

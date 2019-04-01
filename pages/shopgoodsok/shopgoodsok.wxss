@@ -1,0 +1,25 @@
+/* pages/shopgoodsok/shopgoodsok.wxss */
+.icon{
+  text-align: center;
+  margin-top: 50rpx;
+}
+.goods-text{
+  text-align: center;
+  margin-top: 30rpx;
+}
+.goods-text text{
+  font-size: 24rpx;
+  display: block;
+}
+.footer{
+  text-align: center;
+  margin-top: 50rpx;
+}
+.footer button{
+  width: 200rpx;
+  display: inline-block;
+  margin: 0 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #006439;
+}

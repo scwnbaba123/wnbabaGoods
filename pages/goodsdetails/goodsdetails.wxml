@@ -9,7 +9,8 @@
   <view class="goods-scroll">
     <view class="detail">
       <text class="title">{{ goodsname }}</text>
-      <text class="price">单价 {{ saleprice }}积分</text>
+      <text class="price">单价： {{ saleprice }}积分</text>
+      <text class="franking">库存： {{ storage }}件</text>
       <text class="franking" wx:if="{{franking==0}}">包邮</text>
       <text class="franking" wx:elif="{{franking < 0}}">不包邮，货到付款</text>
       <text class="franking" wx:else>邮费：{{ franking }}</text>
@@ -48,15 +49,17 @@
   <view class="goods-info-allprice">
     总金额：<view class="goods-pay-money">{{amount+num*saleprice}}</view>积分
   </view>
-  <button class="button-ok">确认</button>
+  <button bindtap="notarize" class="button-ok">确认</button>
 </view>
 
 <!-- 底部悬浮栏 -->
 <view class="detail-nav">
-  <image bindtap="toCar" src="../../images/gouwuche.png" />
+  <image class="tocar" bindtap="toCar" src="../../images/gouwuche.png" />
   <view class="line_nav"></view>
-  <image bindtap="addLike"
-    src="{{isLike?'../../images/detail_btn_mark_selected.png':'../../images/detail_btn_mark_normal.png'}}" />
+  <button open-type="share" class="button-share">
+  <image src="../../images/fenxiang.png"/>
+  </button>
+  
   <button class="button-green" bindtap="immeBuy" formType="submit">加入购物车</button>
-  <button class="button-red" bindtap="showModal" formType="submit">立即购买</button>
+  <button class="button-red" bindtap="buynow" formType="submit">立即购买</button>
 </view>

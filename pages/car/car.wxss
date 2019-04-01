@@ -1,80 +1,146 @@
-/* pages/car/car.wxss */
-page{  
-  background: #f5f5f5;  
-}  
-/*总体主盒子*/  
-.container {  
-  position: relative;  
-  width: 100%;  
-  height: 100%;  
-  background-color: #fff;  
-  color: #939393;  
-}  
+.c--f60{color: #f60;}
+.clamp1, .clamp2, .clamp3{display: -webkit-box!important; overflow: hidden; -webkit-box-orient: vertical;}
+.clamp1{-webkit-line-clamp:1;}
+.clamp2{-webkit-line-clamp:2;}
+.clamp3{-webkit-line-clamp:3;}
   
-/*左侧栏主盒子*/  
-.nav_left{  
-  /*设置行内块级元素（没使用定位）*/  
-  display: inline-block;  
-  width: 25%;  
-  height: 100%;  
-  /*主盒子设置背景色为灰色*/  
-  background: #f5f5f5;  
-  text-align: center;  
-}  
-/*左侧栏list的item*/  
-.nav_left .nav_left_items{  
-  /*每个高30px*/  
-  height: 30px;  
-  /*垂直居中*/  
-  line-height: 30px;  
-  /*再设上下padding增加高度，总高42px*/  
-  padding: 6px 0;  
-  /*只设下边线*/  
-  border-bottom: 1px solid #dedede;  
-  /*文字14px*/  
-  font-size: 14px;  
-}  
-/*左侧栏list的item被选中时*/  
-.nav_left .nav_left_items.active{  
-  /*背景色变成白色*/  
-  background: #fff;  
-}  
+.carts-list{
+  padding: 0 20rpx 100rpx;
+}
+ 
+.carts-list .carts-item{
+  border-top: 1rpx solid #e3e3e3;
+  box-sizing: border-box; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 20rpx 10rpx; 
+  width: 100%; 
+  position: relative;
+  background: white;
+}
+.carts-list .carts-item:not(:last-child) {
+  border-bottom: 1rpx solid #999;
+}
+.carts-list .carts-item:nth-child(1){
+  border-top: 0;
+}
+ 
+.carts-select{
+  margin-top:5px;
+  width:30px;
+  height:30px;
+}
+ 
+.carts-item .carts-cnt{
+  flex: 1; 
+  padding: 0 20rpx;
+}
+.carts-cnt .carts-image{
+  float:left; 
+  margin-right: 20rpx; 
+  height: 150rpx; 
+  width: 150rpx;
+ 
+}
+.carts-cnt .carts-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150rpx;
+}
+.carts-cnt .carts-title{
+  font-size:15px;
+}
+.carts-cnt .carts-guige{
+  font-size: 12px;
+}
+.carts-cnt .carts-subtitle{
+  display: flex; 
+  flex-direction: row; 
+  font-size: 15px;
+}
+.carts-list .carts-item .carts-del{
+  position: absolute; 
+  top: 20rpx; 
+  right: 10rpx;
+}
+ 
   
-/*右侧栏主盒子*/  
-.nav_right{  
-  /*右侧盒子使用了绝对定位*/  
-  position: absolute;  
-  top: 0;  
-  right: 0;  
-  flex: 1;  
-  /*宽度75%，高度占满，并使用百分比布局*/  
-  width: 75%;  
-  height: 100%;  
-  padding: 10px;  
-  box-sizing: border-box;  
-  background: #fff;  
-}  
-/*右侧栏list的item*/  
-.nav_right .nav_right_items{  
-  /*浮动向左*/  
-  float: left;  
-  /*每个item设置宽度是33.33%*/  
-  width: 33.33%;  
-  height: 80px;  
-  text-align: center;  
-}  
-.nav_right .nav_right_items image{  
-  /*被图片设置宽高*/  
-  width: 50px;  
-  height: 30px;  
-}  
-.nav_right .nav_right_items text{  
-  /*给text设成块级元素*/  
-  display: block;  
-  margin-top: 5px;  
-  font-size: 10px;  
-  /*设置文字溢出部分为...*/  
-  overflow: hidden;  
-  white-space: nowrap;  
-  text-overflow: ellipsis;  
-}  
+/*数量加减*/  
+.carts-num{
+  /* border: 1rpx solid #aaa;  */
+  border-radius: 5rpx; 
+  display: flex; 
+  align-items: center; 
+  align-self: flex-end; 
+  text-align: center; 
+  height: 50rpx;
+}
+.cart-num-eoo{
+  font-size: 28rpx;
+  color: #999;
+}
+.carts-num .minus, .carts-num .plus{color: #000; text-align: center; line-height: 50rpx; width: 40rpx;}
+.carts-num .minus{font-size: 30rpx;}
+.carts-num .minus.disabled{color: #ccc;}
+.carts-num .plus{font-size: 34rpx;}
+ 
+.bottomfixed{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #f5f5f5;
+}
+ 
+.bottomfixed .inner{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ 
+.bottomfixed .inner .chkAll {
+  font-size: 28rpx;
+  margin-right: 40rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ 
+.bottomfixed .inner .chkAll .allselect{
+  width:30px;
+  height:30px;
+}
+ 
+.bottomfixed .inner .total{
+  font-size:28rpx;
+}
+.bottomfixed .inner .total em{color:#f60;}
+ 
+.btn-pay{
+  position: absolute;
+  right:0px;
+  background:#FF5E3A;
+  color:#fff;
+  padding:0 10px;
+  font-size: 28rpx;
+}
+ 
+.disabled{
+  background:#ccc;
+}
+ 
+.content{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left: 0;
+    font-size: 15px;
+    color:#999;
+    text-align:center;
+}

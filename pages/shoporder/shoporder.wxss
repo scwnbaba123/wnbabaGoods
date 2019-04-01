@@ -1,0 +1,90 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    /* padding-top: 60px;
+    text-align: center; */
+    width: 100%;
+    box-sizing: border-box;
+}
+.order-content{
+  background: #eee;
+  
+}
+.goods-list{
+  background: #fff;
+  width: 100%;
+  padding: 20rpx 28rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.goods-dingdan{
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 10rpx;
+}
+.goods-center{
+  display: flex;
+  justify-content: flex-start;
+  
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+.goods-image{
+  width: 130rpx;
+  height: 120rpx;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.goods-image image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.goods-info text{
+  display: block;
+  font-size: 24rpx;
+}
+.goods-info text:first-child{
+  display: block;
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.goods-zhekou{
+  border-bottom: 1rpx solid #eee;
+}
+.goods-zhekou text{
+  display: block;
+  font-size: 24rpx;
+}
+.goods-zhekou view{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.goods-zhekou view text:last-child{
+  flex-grow: 1;
+  text-align: right;
+}
+.footer{
+  margin-top: 20rpx;
+  text-align: right;
+  line-height: 30rpx;
+}
+.footer button{
+  width: 160rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #1aad19;
+  margin: 0;
+  display: inline-block;
+}
+.footer text{
+  font-size: 24rpx;
+}

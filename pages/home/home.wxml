@@ -15,7 +15,7 @@
         url="/pages/search/search"
       >
         <i class="iconfont icon-sousuo">{{ sousuo }}</i>
-        <view class="search_input">搜索商品sq</view>
+        <view class="search_input">搜索商品</view>
       </navigator>
     </view>
   </view>

@@ -1,41 +1,51 @@
-<!--pages/car/car.wxml-->
-<view class="container">  
-  <!--左侧栏-->  
-  <view class="nav_left">  
-    <block wx:for="{{navLeftItems}}">  
-      <!--当前项的id等于item项的id，那个就是当前状态-->  
-      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->  
-      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.tree.desc}}</view>  
-    </block>  
-  </view>  
-  <!--右侧栏-->  
-  <view class="nav_right">  
-    <!--如果有数据，才遍历项-->  
-    <view wx:if="{{navRightItems[curIndex].tree.nodes[1].tree.nodes}}">  
-      <block wx:for="{{navRightItems[curIndex].tree.nodes[1].tree.nodes}}">  
-        <view class="nav_right_items">  
-          <navigator url="../list/index?brand={{item.tree.id}}&typeid={{navRightItems[curIndex].id}}">  
-            <!--用view包裹图片组合，如果有图片就用，无图片提供就使用50x30的这个默认图片-->  
-            <view>                
-              <block wx:if="{{item.tree.logo}}">  
-                <image src="{{item.tree.logo}}"></image>  
-              </block>  
-              <block wx:else>  
-                <image src="http://temp.im/50x30"></image>  
-              </block>  
-            </view>  
-            <!--如果有文字，就用文字；无文字就用其他-->  
-            <view wx:if="{{item.tree.desc}}">  
-              <text>{{item.tree.desc}}</text>  
-            </view>  
-            <view wx:else>  
-              <text>{{item.tree.desc2}}</text>  
-            </view>  
-          </navigator>  
+<block wx:if="{{hasList}}">
+  <!-- <>购物车列表 -->
+  <view class="carts-list">
+    <view wx:for="{{carts}}" class="carts-item" wx:key="cart" wx:item="item" bindtap="togoodsdetails" id="{{item.goods_id}}">
+      <!-- //复选框 -->
+      <view class="carts-radio">
+        <image class="carts-select" bindtap="bindCheckbox" data-index="{{index}}" src="{{item.isSelect?'../../images/select.png':'../../images/n_select.png'}}" />
+      </view>  
+      <!-- //商品信息 -->  
+      <view class="carts-cnt">
+        <image class="carts-image" src="{{item.goods_image}}" mode="aspectFill"/>
+        <view class="carts-info">
+          <view class="carts-title clamp2">{{item.goods_name}}</view>
+          <text class="carts-guige" wx:if="{{item.franking>0}}">邮费{{item.franking}}元</text>
+          <text class="carts-guige" wx:elif="{{item.franking<0}}">不包邮</text>
+          <text class="carts-guige" wx:else>包邮</text>
+          <view class="carts-subtitle">
+            <text class="carts-price c--f60">{{item.goods_price}}积分</text>
+          </view>
+        </view>
+      </view>
+      <!-- //数量加减 -->  
+      <view class="carts-num">
+        <view class="cart-num-eoo">{{item.goods_num}}件</view>
+      </view>
+      
+      <!-- //删除 -->  
+      <icon class="carts-del" type="clear" size="16" color="#ccc" data-index="{{index}}" id="{{item.cart_id}}" bindtap="bindCartsDel" />
+    </view>
+  </view>
+ <view class="carts-footer">  
+    <view class="bottomfixed">  
+      <view class="inner">  
+        <view class="chkAll" bindtap="bindSelectAll">
+        <image class="allselect" src="{{selectAllStatus?'../../images/select.png':'../../images/n_select.png'}}" /> 
+          <text>全选</text>  
         </view>  
-      </block>  
+        <view class="total">合计：<em>{{totalMoney}}积分</em></view>  
+        <view wx:if="{{totalCount != 0}}" class="btn-pay" bindtap="bindjiesuan">去结算({{totalCount}})</view>  
+        <view wx:else class="btn-pay disabled">去结算({{totalCount}})</view>  
+      </view>  
     </view>  
-    <!--如果无数据，则显示数据-->  
-    <view wx:else>暂无数据</view>  
-  </view>  
-</view>  
+  </view>
+  </block>
+  <block wx:else>
+     <view class="content" >
+      <view style="margin-top:50px;width:100%;">
+       <view style="font-size:15px;">购物车没有商品!</view>
+      </view>
+    </view>
+  </block>

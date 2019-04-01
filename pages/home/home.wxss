@@ -1,8 +1,8 @@
-@import "../../components/shop_grid_list.wxss";
+/* @import "../../components/shop_grid_list.wxss";
 @import "../../components/bomb_screen.wxss";
 @import "../../components/common/placeholder.wxss";
 @import "../../components/common/bottomLoadMore.wxss";
-@import "../../components/discover.wxss";
+@import "../../components/discover.wxss"; */
 
 .header {
   position: fixed;

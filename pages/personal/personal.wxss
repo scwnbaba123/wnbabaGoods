@@ -1,0 +1,33 @@
+/* pages/personal/personal.wxss */
+.container{
+  background: #eee;
+  padding-top: 20rpx;
+}
+.user-info{
+  background: #fff;
+  width: 100%;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+}
+.user-info text{
+  font-size: 26rpx;
+  line-height: 50rpx;
+  display: block;
+}
+.user-info text:first-child{
+  display: block;
+  width: 180rpx;
+}
+.user-info input{
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.getaddress{
+  width: 100%;
+  padding: 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+}

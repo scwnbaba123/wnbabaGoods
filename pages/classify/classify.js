@@ -93,6 +93,12 @@ Page({
       }
     })
   },
+  details(e) {
+    var goodsid = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../goodsdetails/goodsdetails?goodsid='+goodsid
+    })
+  },
      /**
    * 页面上拉触底事件的处理函数
    */

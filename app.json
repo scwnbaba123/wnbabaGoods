@@ -10,7 +10,11 @@
     "pages/search/search",
     "pages/car/car",
     "pages/common/wnsearch/wnsearch",
-    "pages/goodsdetails/goodsdetails"
+    "pages/goodsdetails/goodsdetails",
+    "pages/goodsorder/goodsorder",
+    "pages/personal/personal",
+    "pages/shopgoodsok/shopgoodsok",
+    "pages/shoporder/shoporder"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,7 +49,7 @@
         "selectedIconPath": "images/gouwuche.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/myinfo/myinfo",
         "text": "我",
         "iconPath": "images/icon_info.png",
         "selectedIconPath": "images/icon_info_active.png"

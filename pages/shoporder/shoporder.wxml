@@ -1,0 +1,107 @@
+<view class="page">
+  <!-- <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}"
+            bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider"
+          style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);">
+        </view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}"> -->
+
+          <view class="order-content">
+            <view class="goods-list" wx:for="{{goodsList}}" wx:key="*this" wx:for-item="item">
+                <view class="goods-dingdan">
+                    订单编号：{{item.order_sn}}
+                  </view>
+              <view wx:for="{{item.order_goods_info}}" wx:key="item.id" wx:for-item="res">
+                <view class="goods-center">
+                  <view class="goods-image">
+                    <image class="" src="{{res.more.thumbnail}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+                      
+                  </view>
+                  <view class="goods-info">
+                    <text>{{res.goods_name}}</text>
+                    <text>数量：{{res.goods_number}}</text>
+                    <text>单价：{{res.goods_price}}积分</text>
+                  </view>
+                </view>
+                <view class="goods-zhekou">
+                  <view>
+                    <text>会员折扣：</text>
+                    <text>{{item.discount*item.goods_amount/100}}元</text>
+                  </view>
+                  <view>
+                      <text>积分折扣：</text>
+                      <text>{{item.integral}}</text>
+                  </view>
+                  <view>
+                      <text>总价：</text>
+                      <text>{{res.goods_price*res.goods_number}}积分</text>
+                  </view>
+                  <view>
+                      <text>实付：</text>
+                      <text>{{item.money_paid}}积分</text>
+                  </view>
+                </view>
+                
+              </view>
+              <view class="footer">
+                  <text wx:if="{{item.pay_status==2&&item.status==-1}}">未发货</text>
+                  <text wx:if="{{item.pay_status==2&&item.status==3}}">已取消</text>
+                  <button 
+                  wx:if="{{item.pay_status==0}}" 
+                  id="{{item.order_sn}}"
+                  bindtap="goodsdetail"
+                  >
+                  立即付款
+                </button>
+                <button wx:elif="{{item.pay_status==2&&item.status==1}}">查看物流</button>
+                </view>
+            </view>
+          </view>
+
+          <view hidden="{{loadmore}}" class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多了</view>
+          </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+      </view>
+    </view>
+  </view> -->
+</view>

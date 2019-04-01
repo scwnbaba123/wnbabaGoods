@@ -22,7 +22,13 @@
     <scroll-view id="right-scroll-nav" scroll-y="true">
       <view class="goods-info">
         <view class="weui-tab__content">
-          <view class="wn-goods-list" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+          <view 
+          class="wn-goods-list"
+          wx:for="{{goodsList}}" 
+          wx:key="{{item.id}}" 
+          id="{{ goodsList[index].goods_id }}"
+          bindtap="details"
+          >
             <view class="wn-goods-img">
               <image class="wn-goods-img" src="{{item.more.thumbnail}}"></image>
             </view>

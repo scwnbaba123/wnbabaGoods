@@ -1,0 +1,125 @@
+/**index.wxss**/
+.header{
+  width: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.userinfo {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right,#00b09b,#96c93d);
+  margin: 20rpx;
+  border-radius: 10rpx;
+  -webkit-border-radius: 10rpx;
+  -moz-border-radius: 10rpx;
+  -ms-border-radius: 10rpx;
+  -o-border-radius: 10rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 64rpx;
+  -webkit-border-radius: 64rpx;
+  -moz-border-radius: 64rpx;
+  -ms-border-radius: 64rpx;
+  -o-border-radius: 64rpx;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 24rpx;
+}
+.user-message{
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  background: #eee;
+  height: 100%;
+  padding-bottom: 20%;
+}
+
+.all-order{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  margin: 20rpx 0;
+}
+.all-order text:first-child{
+  display: block;
+  flex-grow: 1;
+  font-size: 26rpx;
+  
+}
+.all-order text:last-child{
+  font-size: 24rpx;
+  color: #999;
+}
+.check-order{
+  width: 100%;
+  display: flex;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.lidear{
+  width: 25%;
+  text-align: center;
+  
+}
+.lidear .img{
+  width: 100%;
+  text-align: center;
+}
+
+.lidear image{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+.lidear text{
+  font-size: 26rpx;
+  color: #515151;
+}
+.persenal{
+  display: flex;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #eee;
+  background: #fff;
+}
+.persenal text{
+  font-size: 26rpx;
+  flex-grow: 1;
+}
+.persenal text:first-child{
+  line-height: 50rpx;
+}
+.persenal text:nth-child(2){
+  text-align: right;
+  color: #999;
+  /* font-weight: bold; */
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.bottom{
+  width: 90%;
+  margin-top: 30%;
+  font-size: 26rpx;
+  
+}
+.icon-icon1{
+  display: block;
+  font-size: 32rpx;
+  color: #999;
+}

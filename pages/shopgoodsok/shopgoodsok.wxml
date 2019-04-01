@@ -1,0 +1,16 @@
+<view>
+  <view class="icon">
+    <icon type="success" size="93"></icon>
+  </view>
+  <view class="goods-text">
+    <text>恭喜！您已付款成功</text>
+    <text>蜗牛巴巴将尽快为您发货</text>
+    <text>您可以在“我的订单”</text>
+    <text>查看发货状态谢谢惠顾</text>
+  </view>
+  <view class="footer">
+    <button bindtap="goshop">继续逛逛</button>
+    <button bindtap="myorder">我的订单</button>
+  </view>
+
+</view>
